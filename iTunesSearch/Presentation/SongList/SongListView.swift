@@ -1,5 +1,5 @@
 //
-//  AlbumListView.swift
+//  SongListView.swift
 //  iTunesSearch
 //
 //  Created by Andrea Stevanato on 29/08/23.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct AlbumListView: View {
+struct SongListView: View {
 
-    @ObservedObject var viewModel: AlbumListViewModel
+    @ObservedObject var viewModel: SongListViewModel
 
     var body: some View {
         List {
-            ForEach(viewModel.albums) { album in
-                Text(album.collectionName)
+            ForEach(viewModel.songs) { movie in
+                Text(movie.artistName)
             }
             switch viewModel.state {
             case .initial:
@@ -36,7 +36,6 @@ struct AlbumListView: View {
     }
 }
 
-
 #Preview {
-    AlbumListView(viewModel: AlbumListViewModel())
+    SongListView(viewModel: SongListViewModel())
 }

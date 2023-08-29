@@ -1,6 +1,6 @@
 //
-//  AlbumListViewModel.swift
-//  iTunes-SwiftUI
+//  SongListViewModel.swift
+//  iTunesSearch
 //
 //  Created by Andrea Stevanato on 29/08/23.
 //
@@ -8,15 +8,15 @@
 import Combine
 import Foundation
 
-final class AlbumListViewModel: ObservableObject {
+final class SongListViewModel: ObservableObject {
 
     @Published var searchTerm: String = ""
-    @Published var albums: [Album] = []
+    @Published var songs: [Song] = []
     @Published var state: FetchState = .initial
 
     let limit: Int = 10
     var page: Int = 0
-
+    
     let service = APIService()
 
     var subscriptions = Set<AnyCancellable>()
@@ -27,16 +27,17 @@ final class AlbumListViewModel: ObservableObject {
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .sink { [weak self] term in
                 self?.state = .initial
-                self?.albums = []
-                self?.fetchAlbum(searchTerm: term)
+                self?.songs = []
+                self?.fetchSongs(searchTerm: term)
             }.store(in: &subscriptions)
     }
 
+
     func loadMore() {
-        fetchAlbum(searchTerm: searchTerm)
+        fetchSongs(searchTerm: searchTerm)
     }
 
-    private func fetchAlbum(searchTerm: String) {
+    private func fetchSongs(searchTerm: String) {
         guard !searchTerm.isEmpty else {
             return
         }
@@ -46,12 +47,12 @@ final class AlbumListViewModel: ObservableObject {
 
         state = .isLoading
 
-        service.fetchAlbums(searchTerm: searchTerm, page: page, limit: limit) { result in
+        service.fetchSongs(searchTerm: searchTerm, page: page, limit: limit) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let result):
-                    for album in result.results {
-                        self.albums.append(album)
+                    for song in result.results {
+                        self.songs.append(song)
                     }
                     self.page += 1
                     self.state = result.results.count == self.limit ? .initial : .loadedAll

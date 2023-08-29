@@ -17,6 +17,18 @@
 		FCD772DA2A9DF847002D1B6F /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772D62A9DF846002D1B6F /* Song.swift */; };
 		FCD772DB2A9DF847002D1B6F /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772D72A9DF846002D1B6F /* Album.swift */; };
 		FCD772DF2A9DF9CE002D1B6F /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772DE2A9DF9CE002D1B6F /* AlbumListView.swift */; };
+		FCD772E22A9E1FBD002D1B6F /* AlbumSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772E12A9E1FBD002D1B6F /* AlbumSearchView.swift */; };
+		FCD772E42A9E2664002D1B6F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772E32A9E2664002D1B6F /* APIError.swift */; };
+		FCD772E72A9E2D9B002D1B6F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772E62A9E2D9B002D1B6F /* APIService.swift */; };
+		FCD772EA2A9E344C002D1B6F /* SongListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772E92A9E344C002D1B6F /* SongListViewModel.swift */; };
+		FCD772ED2A9E3465002D1B6F /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772EC2A9E3465002D1B6F /* MovieListViewModel.swift */; };
+		FCD772EF2A9E3506002D1B6F /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772EE2A9E3506002D1B6F /* FetchState.swift */; };
+		FCD772F12A9E352A002D1B6F /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772F02A9E352A002D1B6F /* EntityType.swift */; };
+		FCD772F32A9E368E002D1B6F /* MovieSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772F22A9E368E002D1B6F /* MovieSearchListView.swift */; };
+		FCD772F52A9E369E002D1B6F /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772F42A9E369E002D1B6F /* SongListView.swift */; };
+		FCD772F72A9E3748002D1B6F /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772F62A9E3748002D1B6F /* MovieListView.swift */; };
+		FCD772F92A9E500C002D1B6F /* SongSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772F82A9E500C002D1B6F /* SongSearchListView.swift */; };
+		FCD772FB2A9E5676002D1B6F /* SearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772FA2A9E5676002D1B6F /* SearchPlaceholderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +55,18 @@
 		FCD772D62A9DF846002D1B6F /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		FCD772D72A9DF846002D1B6F /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		FCD772DE2A9DF9CE002D1B6F /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
+		FCD772E12A9E1FBD002D1B6F /* AlbumSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchView.swift; sourceTree = "<group>"; };
+		FCD772E32A9E2664002D1B6F /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		FCD772E62A9E2D9B002D1B6F /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		FCD772E92A9E344C002D1B6F /* SongListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewModel.swift; sourceTree = "<group>"; };
+		FCD772EC2A9E3465002D1B6F /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
+		FCD772EE2A9E3506002D1B6F /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
+		FCD772F02A9E352A002D1B6F /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
+		FCD772F22A9E368E002D1B6F /* MovieSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchListView.swift; sourceTree = "<group>"; };
+		FCD772F42A9E369E002D1B6F /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
+		FCD772F62A9E3748002D1B6F /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
+		FCD772F82A9E500C002D1B6F /* SongSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSearchListView.swift; sourceTree = "<group>"; };
+		FCD772FA2A9E5676002D1B6F /* SearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceholderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +113,7 @@
 				FCB8EE0B2A9DF7D00034EFDA /* ContentView.swift */,
 				FCD772D12A9DF846002D1B6F /* Presentation */,
 				FCD772D42A9DF846002D1B6F /* Model */,
+				FCD772E52A9E2D89002D1B6F /* Services */,
 				FCB8EE0D2A9DF7D30034EFDA /* Assets.xcassets */,
 				FCB8EE0F2A9DF7D30034EFDA /* Preview Content */,
 			);
@@ -106,6 +131,7 @@
 		FCB8EE192A9DF7D30034EFDA /* iTunesSearchTests */ = {
 			isa = PBXGroup;
 			children = (
+				FCD772E02A9E0316002D1B6F /* Presentation */,
 				FCB8EE1A2A9DF7D30034EFDA /* iTunesSearchTests.swift */,
 			);
 			path = iTunesSearchTests;
@@ -114,7 +140,10 @@
 		FCD772D12A9DF846002D1B6F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FCD772FA2A9E5676002D1B6F /* SearchPlaceholderView.swift */,
 				FCD772D22A9DF846002D1B6F /* AlbumList */,
+				FCD772E82A9E3434002D1B6F /* SongList */,
+				FCD772EB2A9E3451002D1B6F /* MovieList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -122,6 +151,7 @@
 		FCD772D22A9DF846002D1B6F /* AlbumList */ = {
 			isa = PBXGroup;
 			children = (
+				FCD772E12A9E1FBD002D1B6F /* AlbumSearchView.swift */,
 				FCD772DE2A9DF9CE002D1B6F /* AlbumListView.swift */,
 				FCD772D32A9DF846002D1B6F /* AlbumListViewModel.swift */,
 			);
@@ -134,8 +164,46 @@
 				FCD772D72A9DF846002D1B6F /* Album.swift */,
 				FCD772D52A9DF846002D1B6F /* Movie.swift */,
 				FCD772D62A9DF846002D1B6F /* Song.swift */,
+				FCD772E32A9E2664002D1B6F /* APIError.swift */,
+				FCD772EE2A9E3506002D1B6F /* FetchState.swift */,
+				FCD772F02A9E352A002D1B6F /* EntityType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FCD772E02A9E0316002D1B6F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FCD772E52A9E2D89002D1B6F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FCD772E62A9E2D9B002D1B6F /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FCD772E82A9E3434002D1B6F /* SongList */ = {
+			isa = PBXGroup;
+			children = (
+				FCD772F82A9E500C002D1B6F /* SongSearchListView.swift */,
+				FCD772F42A9E369E002D1B6F /* SongListView.swift */,
+				FCD772E92A9E344C002D1B6F /* SongListViewModel.swift */,
+			);
+			path = SongList;
+			sourceTree = "<group>";
+		};
+		FCD772EB2A9E3451002D1B6F /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				FCD772F22A9E368E002D1B6F /* MovieSearchListView.swift */,
+				FCD772F62A9E3748002D1B6F /* MovieListView.swift */,
+				FCD772EC2A9E3465002D1B6F /* MovieListViewModel.swift */,
+			);
+			path = MovieList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,11 +308,23 @@
 			files = (
 				FCB8EE0C2A9DF7D00034EFDA /* ContentView.swift in Sources */,
 				FCB8EE0A2A9DF7D00034EFDA /* iTunesSearchApp.swift in Sources */,
+				FCD772F32A9E368E002D1B6F /* MovieSearchListView.swift in Sources */,
+				FCD772F72A9E3748002D1B6F /* MovieListView.swift in Sources */,
+				FCD772F12A9E352A002D1B6F /* EntityType.swift in Sources */,
+				FCD772EA2A9E344C002D1B6F /* SongListViewModel.swift in Sources */,
+				FCD772E22A9E1FBD002D1B6F /* AlbumSearchView.swift in Sources */,
 				FCD772D92A9DF846002D1B6F /* Movie.swift in Sources */,
 				FCD772D82A9DF846002D1B6F /* AlbumListViewModel.swift in Sources */,
 				FCD772DA2A9DF847002D1B6F /* Song.swift in Sources */,
+				FCD772E72A9E2D9B002D1B6F /* APIService.swift in Sources */,
 				FCD772DB2A9DF847002D1B6F /* Album.swift in Sources */,
+				FCD772F52A9E369E002D1B6F /* SongListView.swift in Sources */,
+				FCD772FB2A9E5676002D1B6F /* SearchPlaceholderView.swift in Sources */,
+				FCD772EF2A9E3506002D1B6F /* FetchState.swift in Sources */,
 				FCD772DF2A9DF9CE002D1B6F /* AlbumListView.swift in Sources */,
+				FCD772E42A9E2664002D1B6F /* APIError.swift in Sources */,
+				FCD772ED2A9E3465002D1B6F /* MovieListViewModel.swift in Sources */,
+				FCD772F92A9E500C002D1B6F /* SongSearchListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

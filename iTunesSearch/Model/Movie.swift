@@ -14,22 +14,39 @@ struct MovieResult: Codable {
 }
 
 // MARK: - Movie
-struct Movie: Codable {
+struct Movie: Codable, Identifiable {
     let wrapperType, kind: String
     let artistID: Int?
     let trackID: Int
-    let artistName, trackName, trackCensoredName: String
+    let artistName: String
+    let trackName: String
+    let trackCensoredName: String
     let artistViewURL: String?
     let trackViewURL: String
     let previewURL: String
-    let artworkUrl30, artworkUrl60, artworkUrl100: String
-    let collectionPrice, trackPrice: Double
-    let trackRentalPrice, collectionHDPrice, trackHDPrice, trackHDRentalPrice: Double?
-    let releaseDate: String
-    let collectionExplicitness, trackExplicitness: String
+    let artworkUrl30: String
+    let artworkUrl60: String
+    let artworkUrl100: String
+    let collectionPrice: Double
+    let trackPrice: Double
+    let trackRentalPrice: Double?
+    let collectionHDPrice: Double?
+    let trackHDPrice: Double?
+    let trackHDRentalPrice: Double?
+    let releaseDate: String?
+    let collectionExplicitness: String
+    let trackExplicitness: String
     let trackTimeMillis: Int
-    let country, currency, primaryGenreName, contentAdvisoryRating: String
-    let shortDescription, longDescription: String
+    let country: String
+    let currency: String
+    let primaryGenreName: String
+    let contentAdvisoryRating: String
+    let shortDescription: String?
+    let longDescription: String
+
+    var id: Int {
+        trackID
+    }
 
     enum CodingKeys: String, CodingKey {
         case wrapperType, kind

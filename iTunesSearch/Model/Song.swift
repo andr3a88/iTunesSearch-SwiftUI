@@ -15,22 +15,42 @@ struct SongResult: Codable {
 }
 
 // MARK: - Song
-struct Song: Codable {
+struct Song: Codable, Identifiable {
     let wrapperType, kind: String
-    let artistID, collectionID, trackID: Int
-    let artistName, collectionName, trackName, collectionCensoredName: String
+    let artistID: Int
+    let collectionID: Int
+    let trackID: Int
+    let artistName: String
+    let collectionName: String
+    let trackName: String
+    let collectionCensoredName: String
     let trackCensoredName: String
-    let artistViewURL, collectionViewURL, trackViewURL: String
+    let artistViewURL: String
+    let collectionViewURL: String
+    let trackViewURL: String
     let previewURL: String
-    let artworkUrl30, artworkUrl60, artworkUrl100: String
-    let collectionPrice, trackPrice: Double
+    let artworkUrl30: String
+    let artworkUrl60: String
+    let artworkUrl100: String
+    let collectionPrice: Double?
+    let trackPrice: Double?
     let releaseDate: String
-    let collectionExplicitness, trackExplicitness: String
-    let discCount, discNumber, trackCount, trackNumber: Int
-    let trackTimeMillis: Int
-    let country, currency, primaryGenreName: String
+    let collectionExplicitness: String
+    let trackExplicitness: String
+    let discCount: Int
+    let discNumber: Int
+    let trackCount: Int
+    let trackNumber: Int
+    let trackTimeMillis: Int?
+    let country: String
+    let currency: String
+    let primaryGenreName: String
     let isStreamable: Bool
     let collectionArtistName: String?
+
+    var id: Int {
+        trackID
+    }
 
     enum CodingKeys: String, CodingKey {
         case wrapperType, kind
