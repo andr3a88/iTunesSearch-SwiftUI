@@ -14,25 +14,29 @@ final class MovieListViewModel: ObservableObject {
     @Published var movies: [Movie] = []
     @Published var state: FetchState = .initial
 
-    let limit: Int = 10
-    var page: Int = 0
-    
-    let service = APIService()
+    private let limit: Int = 10
+    private var page: Int = 0
 
-    var subscriptions = Set<AnyCancellable>()
+    private let service = APIService()
+    private var subscriptions = Set<AnyCancellable>()
 
     init() {
         $searchTerm
+            .removeDuplicates()
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .sink { [weak self] term in
-                self?.state = .initial
-                self?.movies = []
+                self?.clear()
                 self?.fetchMovies(searchTerm: term)
             }.store(in: &subscriptions)
     }
 
-    
+    private func clear() {
+        state = .initial
+        movies = []
+        page = 0
+    }
+
     func loadMore() {
         fetchMovies(searchTerm: searchTerm)
     }
@@ -62,5 +66,14 @@ final class MovieListViewModel: ObservableObject {
                 }
             }
         }
+    }
+}
+
+extension MovieListViewModel {
+
+    static func mock() -> MovieListViewModel {
+        let viewModel = MovieListViewModel()
+        viewModel.movies = [Movie.mock()]
+        return viewModel
     }
 }

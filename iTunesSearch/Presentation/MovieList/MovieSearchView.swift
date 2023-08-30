@@ -1,5 +1,5 @@
 //
-//  SongSearchListView.swift
+//  MovieSearchView.swift
 //  iTunesSearch
 //
 //  Created by Andrea Stevanato on 29/08/23.
@@ -7,28 +7,28 @@
 
 import SwiftUI
 
-struct SongSearchListView: View {
+struct MovieSearchView: View {
 
-    @StateObject private var viewModel = SongListViewModel()
+    @StateObject private var viewModel = MovieListViewModel()
 
-    private let suggestions = ["Smells Like Teen Spirit", "Billie Jean", "Alive"]
+    private let suggestions = ["Batman", "Avengers", "fast and furious"]
 
     var body: some View {
         NavigationView {
             Group {
                 if viewModel.searchTerm.isEmpty {
-                    SearchPlaceholderView(searchTerm: $viewModel.searchTerm, 
+                    SearchPlaceholderView(searchTerm: $viewModel.searchTerm,
                                           suggestions: suggestions)
                 } else {
-                    SongListView(viewModel: viewModel)
+                    MovieListView(viewModel: viewModel)
                 }
             }
             .searchable(text: $viewModel.searchTerm)
-            .navigationTitle("Search Song")
+            .navigationTitle("Search Movies")
         }
     }
 }
 
 #Preview {
-    SongSearchListView()
+    MovieSearchView()
 }

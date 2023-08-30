@@ -14,22 +14,27 @@ final class AlbumListViewModel: ObservableObject {
     @Published var albums: [Album] = []
     @Published var state: FetchState = .initial
 
-    let limit: Int = 10
-    var page: Int = 0
+    private let limit: Int = 10
+    private var page: Int = 0
 
-    let service = APIService()
-
-    var subscriptions = Set<AnyCancellable>()
+    private let service = APIService()
+    private var subscriptions = Set<AnyCancellable>()
 
     init() {
         $searchTerm
+            .removeDuplicates()
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .sink { [weak self] term in
-                self?.state = .initial
-                self?.albums = []
+                self?.clear()
                 self?.fetchAlbum(searchTerm: term)
             }.store(in: &subscriptions)
+    }
+
+    private func clear() {
+        state = .initial
+        albums = []
+        page = 0
     }
 
     func loadMore() {
@@ -63,3 +68,13 @@ final class AlbumListViewModel: ObservableObject {
         }
     }
 }
+
+extension AlbumListViewModel {
+
+    static func mock() -> AlbumListViewModel {
+        let viewModel = AlbumListViewModel()
+        viewModel.albums = [Album.mock()]
+        return viewModel
+    }
+}
+

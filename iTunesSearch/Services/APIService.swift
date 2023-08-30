@@ -15,7 +15,7 @@ protocol APIServiceType {
 
 final class APIService {
 
-    // MARK: Fetch data
+    // MARK: Fetch data from iTunes Search API
 
     func fetchAlbums(searchTerm: String, page: Int, limit: Int, completion: @escaping (Result<AlbumResult, APIError>) -> Void) {
         let url = createURL(for: searchTerm, type: .album, page: page, limit: limit)

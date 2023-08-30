@@ -11,7 +11,7 @@ struct AlbumSearchView: View {
     
     @StateObject var viewModel = AlbumListViewModel()
 
-    private let suggestions = ["Daft Punk", "Marting Garrix", "Alesso"]
+    private let suggestions = ["Daft Punk", "Martin Garrix", "Alesso"]
 
     var body: some View {
         NavigationView {

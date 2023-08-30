@@ -13,8 +13,8 @@ struct SongListView: View {
 
     var body: some View {
         List {
-            ForEach(viewModel.songs) { movie in
-                Text(movie.artistName)
+            ForEach(viewModel.songs) { song in
+                SongRowView(song: song)
             }
             switch viewModel.state {
             case .initial:
@@ -37,5 +37,5 @@ struct SongListView: View {
 }
 
 #Preview {
-    SongListView(viewModel: SongListViewModel())
+    SongListView(viewModel: SongListViewModel.mock())
 }

@@ -10,15 +10,19 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
+            SearchView()
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
             AlbumSearchView()
                 .tabItem {
                     Label("Albums", systemImage: "music.quarternote.3")
                 }
-            SongSearchListView()
+            SongSearchView()
                 .tabItem {
                     Label("Song", systemImage: "music.note")
                 }
-            MovieSearchListView()
+            MovieSearchView()
                 .tabItem {
                     Label("Movies", systemImage: "film")
                 }
