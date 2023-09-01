@@ -27,9 +27,10 @@ struct MovieListView: View {
                     .progressViewStyle(.circular)
                     .frame(maxWidth: .infinity)
             case .loadedAll:
-                Color.gray
+                EmptyView()
             case .error(let message):
                 Text(message)
+                    .foregroundColor(.red)
             }
         }
         .listStyle(.grouped)
@@ -37,5 +38,5 @@ struct MovieListView: View {
 }
 
 #Preview {
-    MovieListView(viewModel: MovieListViewModel())
+    MovieListView(viewModel: MovieListViewModel.mock())
 }

@@ -18,6 +18,14 @@
 		FCA7F2B02A9F525B00DB9AE0 /* SongSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2AF2A9F525B00DB9AE0 /* SongSectionView.swift */; };
 		FCA7F2B22A9F526800DB9AE0 /* MovieSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2B12A9F526800DB9AE0 /* MovieSectionView.swift */; };
 		FCA7F2B42A9F527A00DB9AE0 /* AlbumSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2B32A9F527A00DB9AE0 /* AlbumSectionView.swift */; };
+		FCA7F2B62A9F95F800DB9AE0 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2B52A9F95F800DB9AE0 /* AlbumDetailView.swift */; };
+		FCA7F2B82A9F9BFF00DB9AE0 /* SongsForAlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2B72A9F9BFF00DB9AE0 /* SongsForAlbumListViewModel.swift */; };
+		FCA7F2BC2AA098E300DB9AE0 /* SongsForAlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2BB2AA098E300DB9AE0 /* SongsForAlbumListView.swift */; };
+		FCA7F2C22AA0A5D600DB9AE0 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2C12AA0A5D600DB9AE0 /* APIServiceTests.swift */; };
+		FCA7F2C52AA0BE7300DB9AE0 /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2C42AA0BE7300DB9AE0 /* SongDetailView.swift */; };
+		FCA7F2C72AA0C08500DB9AE0 /* AlbumForSongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2C62AA0C08500DB9AE0 /* AlbumForSongViewModel.swift */; };
+		FCA7F2C92AA0EC0E00DB9AE0 /* SongGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2C82AA0EC0E00DB9AE0 /* SongGridView.swift */; };
+		FCA7F2CB2AA0EC8300DB9AE0 /* AlbumHeaderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2CA2AA0EC8300DB9AE0 /* AlbumHeaderDetailView.swift */; };
 		FCB8EE0A2A9DF7D00034EFDA /* iTunesSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8EE092A9DF7D00034EFDA /* iTunesSearchApp.swift */; };
 		FCB8EE0C2A9DF7D00034EFDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8EE0B2A9DF7D00034EFDA /* ContentView.swift */; };
 		FCB8EE0E2A9DF7D30034EFDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB8EE0D2A9DF7D30034EFDA /* Assets.xcassets */; };
@@ -64,6 +72,14 @@
 		FCA7F2AF2A9F525B00DB9AE0 /* SongSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSectionView.swift; sourceTree = "<group>"; };
 		FCA7F2B12A9F526800DB9AE0 /* MovieSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSectionView.swift; sourceTree = "<group>"; };
 		FCA7F2B32A9F527A00DB9AE0 /* AlbumSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSectionView.swift; sourceTree = "<group>"; };
+		FCA7F2B52A9F95F800DB9AE0 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
+		FCA7F2B72A9F9BFF00DB9AE0 /* SongsForAlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsForAlbumListViewModel.swift; sourceTree = "<group>"; };
+		FCA7F2BB2AA098E300DB9AE0 /* SongsForAlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsForAlbumListView.swift; sourceTree = "<group>"; };
+		FCA7F2C12AA0A5D600DB9AE0 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		FCA7F2C42AA0BE7300DB9AE0 /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
+		FCA7F2C62AA0C08500DB9AE0 /* AlbumForSongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumForSongViewModel.swift; sourceTree = "<group>"; };
+		FCA7F2C82AA0EC0E00DB9AE0 /* SongGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongGridView.swift; sourceTree = "<group>"; };
+		FCA7F2CA2AA0EC8300DB9AE0 /* AlbumHeaderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHeaderDetailView.swift; sourceTree = "<group>"; };
 		FCB8EE062A9DF7D00034EFDA /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB8EE092A9DF7D00034EFDA /* iTunesSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchApp.swift; sourceTree = "<group>"; };
 		FCB8EE0B2A9DF7D00034EFDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,6 +145,35 @@
 			path = Reusable;
 			sourceTree = "<group>";
 		};
+		FCA7F2BD2AA0991700DB9AE0 /* AlbumDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				FCA7F2B52A9F95F800DB9AE0 /* AlbumDetailView.swift */,
+				FCA7F2CA2AA0EC8300DB9AE0 /* AlbumHeaderDetailView.swift */,
+				FCA7F2BB2AA098E300DB9AE0 /* SongsForAlbumListView.swift */,
+				FCA7F2B72A9F9BFF00DB9AE0 /* SongsForAlbumListViewModel.swift */,
+				FCA7F2C82AA0EC0E00DB9AE0 /* SongGridView.swift */,
+			);
+			path = AlbumDetailView;
+			sourceTree = "<group>";
+		};
+		FCA7F2BE2AA0A5A900DB9AE0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FCA7F2C12AA0A5D600DB9AE0 /* APIServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FCA7F2C32AA0BE5900DB9AE0 /* SongDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				FCA7F2C42AA0BE7300DB9AE0 /* SongDetailView.swift */,
+				FCA7F2C62AA0C08500DB9AE0 /* AlbumForSongViewModel.swift */,
+			);
+			path = SongDetailView;
+			sourceTree = "<group>";
+		};
 		FCB8EDFD2A9DF7D00034EFDA = {
 			isa = PBXGroup;
 			children = (
@@ -173,8 +218,9 @@
 		FCB8EE192A9DF7D30034EFDA /* iTunesSearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				FCD772E02A9E0316002D1B6F /* Presentation */,
 				FCB8EE1A2A9DF7D30034EFDA /* iTunesSearchTests.swift */,
+				FCD772E02A9E0316002D1B6F /* Presentation */,
+				FCA7F2BE2AA0A5A900DB9AE0 /* Services */,
 			);
 			path = iTunesSearchTests;
 			sourceTree = "<group>";
@@ -199,6 +245,7 @@
 				FCD772D32A9DF846002D1B6F /* AlbumListViewModel.swift */,
 				FCA7F2A92A9F4A9D00DB9AE0 /* AlbumRowView.swift */,
 				FCA7F2B32A9F527A00DB9AE0 /* AlbumSectionView.swift */,
+				FCA7F2BD2AA0991700DB9AE0 /* AlbumDetailView */,
 			);
 			path = AlbumList;
 			sourceTree = "<group>";
@@ -239,6 +286,7 @@
 				FCD772E92A9E344C002D1B6F /* SongListViewModel.swift */,
 				FCA7F2A22A9F477500DB9AE0 /* SongRowView.swift */,
 				FCA7F2AF2A9F525B00DB9AE0 /* SongSectionView.swift */,
+				FCA7F2C32AA0BE5900DB9AE0 /* SongDetailView */,
 			);
 			path = SongList;
 			sourceTree = "<group>";
@@ -355,11 +403,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA7F2BC2AA098E300DB9AE0 /* SongsForAlbumListView.swift in Sources */,
+				FCA7F2CB2AA0EC8300DB9AE0 /* AlbumHeaderDetailView.swift in Sources */,
 				FCA7F29F2A9F2A3300DB9AE0 /* SearchView.swift in Sources */,
 				FCB8EE0C2A9DF7D00034EFDA /* ContentView.swift in Sources */,
 				FCB8EE0A2A9DF7D00034EFDA /* iTunesSearchApp.swift in Sources */,
 				FCD772F32A9E368E002D1B6F /* MovieSearchView.swift in Sources */,
 				FCD772F72A9E3748002D1B6F /* MovieListView.swift in Sources */,
+				FCA7F2B82A9F9BFF00DB9AE0 /* SongsForAlbumListViewModel.swift in Sources */,
 				FCD772F12A9E352A002D1B6F /* EntityType.swift in Sources */,
 				FCD772EA2A9E344C002D1B6F /* SongListViewModel.swift in Sources */,
 				FCD772E22A9E1FBD002D1B6F /* AlbumSearchView.swift in Sources */,
@@ -370,6 +421,7 @@
 				FCA7F2B42A9F527A00DB9AE0 /* AlbumSectionView.swift in Sources */,
 				FCD772DA2A9DF847002D1B6F /* Song.swift in Sources */,
 				FCD772E72A9E2D9B002D1B6F /* APIService.swift in Sources */,
+				FCA7F2C92AA0EC0E00DB9AE0 /* SongGridView.swift in Sources */,
 				FCA7F2A32A9F477500DB9AE0 /* SongRowView.swift in Sources */,
 				FCD772DB2A9DF847002D1B6F /* Album.swift in Sources */,
 				FCA7F2A62A9F488900DB9AE0 /* BuyButtonStyle.swift in Sources */,
@@ -380,11 +432,14 @@
 				FCD772DF2A9DF9CE002D1B6F /* AlbumListView.swift in Sources */,
 				FCA7F2AA2A9F4A9D00DB9AE0 /* AlbumRowView.swift in Sources */,
 				FCD772E42A9E2664002D1B6F /* APIError.swift in Sources */,
+				FCA7F2B62A9F95F800DB9AE0 /* AlbumDetailView.swift in Sources */,
 				FCA7F2A12A9F2CD900DB9AE0 /* SearchAllListView.swift in Sources */,
 				FCA7F2A82A9F4A6B00DB9AE0 /* ImageLoadingView.swift in Sources */,
+				FCA7F2C52AA0BE7300DB9AE0 /* SongDetailView.swift in Sources */,
 				FCD772ED2A9E3465002D1B6F /* MovieListViewModel.swift in Sources */,
 				FCD772F92A9E500C002D1B6F /* SongSearchView.swift in Sources */,
 				FCA7F2B02A9F525B00DB9AE0 /* SongSectionView.swift in Sources */,
+				FCA7F2C72AA0C08500DB9AE0 /* AlbumForSongViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA7F2C22AA0A5D600DB9AE0 /* APIServiceTests.swift in Sources */,
 				FCB8EE1B2A9DF7D30034EFDA /* iTunesSearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

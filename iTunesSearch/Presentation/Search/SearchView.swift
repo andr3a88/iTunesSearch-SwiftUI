@@ -9,6 +9,12 @@ import SwiftUI
 
 struct SearchView: View {
 
+    static let suggestions = ["Daft Punk",
+                              "Tiesto",
+                              "Rammstein",
+                              "Batman",
+                              "Maneskin"]
+
     @State private var searchTerm: String = ""
     @State private var selectedEntityType: EntityType = .all
 
@@ -32,7 +38,7 @@ struct SearchView: View {
                 Divider()
 
                 if searchTerm.isEmpty {
-                    SearchPlaceholderView(searchTerm: $searchTerm, suggestions: ["Daft Punk", "Batman" ])
+                    SearchPlaceholderView(searchTerm: $searchTerm, suggestions: Self.suggestions)
                         .frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 } else {
                     switch selectedEntityType {
@@ -40,26 +46,14 @@ struct SearchView: View {
                         SearchAllListView(albumViewModel: albumViewModel,
                                           songViewModel: songViewModel,
                                           movieViewModel: movieViewModel)
-                        .onAppear {
-                            albumViewModel.searchTerm = searchTerm
-                            songViewModel.searchTerm = searchTerm
-                            movieViewModel.searchTerm = searchTerm
-                        }
                     case .album:
                         AlbumListView(viewModel: albumViewModel)
-                            .onAppear {
-                                albumViewModel.searchTerm = searchTerm
-                            }
+
                     case .song:
                         SongListView(viewModel: songViewModel)
-                            .onAppear {
-                                albumViewModel.searchTerm = searchTerm
-                            }
+
                     case .movie:
                         MovieListView(viewModel: movieViewModel)
-                            .onAppear {
-                                albumViewModel.searchTerm = searchTerm
-                            }
                     }
                 }
             }
@@ -67,19 +61,32 @@ struct SearchView: View {
             .navigationTitle("Search")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .onChange(of: selectedEntityType, { oldValue, newValue in
+            updateViewModels(for: searchTerm, type: newValue)
+        })
         .onChange(of: searchTerm) { oldValue, newValue in
-            switch selectedEntityType {
-            case .all:
-                albumViewModel.searchTerm = newValue
-                songViewModel.searchTerm = newValue
-                movieViewModel.searchTerm = newValue
-            case .album:
-                albumViewModel.searchTerm = newValue
-            case .song:
-                songViewModel.searchTerm = newValue
-            case .movie:
-                movieViewModel.searchTerm = newValue
-            }
+            updateViewModels(for: newValue, type: selectedEntityType)
+        }
+    }
+
+    private func updateViewModels(for searchTerm: String, type: EntityType) {
+        switch selectedEntityType {
+        case .all:
+            albumViewModel.searchTerm = searchTerm
+            songViewModel.searchTerm = searchTerm
+            movieViewModel.searchTerm = searchTerm
+        case .album:
+            albumViewModel.searchTerm = searchTerm
+            songViewModel.searchTerm = ""
+            movieViewModel.searchTerm = ""
+        case .song:
+            albumViewModel.searchTerm = ""
+            songViewModel.searchTerm = searchTerm
+            movieViewModel.searchTerm = ""
+        case .movie:
+            albumViewModel.searchTerm = ""
+            songViewModel.searchTerm = ""
+            movieViewModel.searchTerm = searchTerm
         }
     }
 }

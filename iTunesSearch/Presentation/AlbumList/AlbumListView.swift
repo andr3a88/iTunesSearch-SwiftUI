@@ -14,7 +14,11 @@ struct AlbumListView: View {
     var body: some View {
         List {
             ForEach(viewModel.albums) { album in
-                AlbumRowView(album: album)
+                NavigationLink {
+                    AlbumDetailView(album: album)
+                } label: {
+                    AlbumRowView(album: album)
+                }
             }
             switch viewModel.state {
             case .initial:
@@ -27,9 +31,10 @@ struct AlbumListView: View {
                     .progressViewStyle(.circular)
                     .frame(maxWidth: .infinity)
             case .loadedAll:
-                Color.gray
+                EmptyView()
             case .error(let message):
                 Text(message)
+                    .foregroundColor(.red)
             }
         }
         .listStyle(.grouped)
@@ -38,5 +43,7 @@ struct AlbumListView: View {
 
 
 #Preview {
-    AlbumListView(viewModel: AlbumListViewModel())
+    NavigationView {
+        AlbumListView(viewModel: AlbumListViewModel.mock())
+    }
 }

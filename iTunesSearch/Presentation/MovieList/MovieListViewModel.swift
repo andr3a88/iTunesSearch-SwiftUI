@@ -17,7 +17,7 @@ final class MovieListViewModel: ObservableObject {
     private let limit: Int = 10
     private var page: Int = 0
 
-    private let service = APIService()
+    private let service: APIServiceType = APIService()
     private var subscriptions = Set<AnyCancellable>()
 
     init() {
@@ -51,7 +51,8 @@ final class MovieListViewModel: ObservableObject {
 
         state = .isLoading
 
-        service.fetchMovies(searchTerm: searchTerm, page: page, limit: limit) { result in
+        service.fetchMovies(searchTerm: searchTerm, page: page, limit: limit) { [weak self] result in
+            guard let self else { return }
             DispatchQueue.main.async {
                 switch result {
                 case .success(let result):

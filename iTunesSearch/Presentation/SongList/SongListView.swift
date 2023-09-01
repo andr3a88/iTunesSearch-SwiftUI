@@ -14,7 +14,12 @@ struct SongListView: View {
     var body: some View {
         List {
             ForEach(viewModel.songs) { song in
-                SongRowView(song: song)
+                NavigationLink {
+                    SongDetailView(song: song)
+                } label: {
+                    SongRowView(song: song)
+                }
+                .buttonStyle(.plain)
             }
             switch viewModel.state {
             case .initial:
@@ -27,9 +32,10 @@ struct SongListView: View {
                     .progressViewStyle(.circular)
                     .frame(maxWidth: .infinity)
             case .loadedAll:
-                Color.gray
+                EmptyView()
             case .error(let message):
                 Text(message)
+                    .foregroundColor(.red)
             }
         }
         .listStyle(.grouped)
