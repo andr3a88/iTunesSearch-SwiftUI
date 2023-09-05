@@ -57,8 +57,8 @@ struct Album: Codable, Identifiable {
 
 extension Album {
 
-    static func mock() -> Album {
-        Album(wrapperType: "collection", collectionType: "Album", artistID: 2, collectionID: 1011757048, amgArtistID: 3,
+    static func mock(collectionID: Int = 1011757048) -> Album {
+        Album(wrapperType: "collection", collectionType: "Album", artistID: 2, collectionID: collectionID, amgArtistID: 3,
               artistName: "Jack Johnson & Friends",
               collectionName: "Best of Kokua Festival (A Benefit for the Kokua Hawaii Foundation)", collectionCensoredName: "",
               artistViewURL: nil, collectionViewURL: "https://music.apple.com/us/album/jack-johnson-friends-best-of-kokua-festival-a/1440752312?uo=4",

@@ -49,7 +49,8 @@ API are not well documented. Some properties on `Movie`, `Albums` and `Song` sho
 ## 🔨 TODO & Improvements
 
 + [] Use `NavigationStack` (iOS 16+) 
-+ [] Add some unit tests
++ [] Add some unit tests to view model
++ [] Try https://github.com/soundcloud/Axt for testing the views
 + [] Check Dark/Light mode implementation
 + [] Strings catalogs with Xcode 15 and SwiftUI (https://developer.apple.com/videos/play/wwdc2023/10155/) 
 

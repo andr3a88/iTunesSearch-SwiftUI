@@ -66,8 +66,8 @@ struct Movie: Codable, Identifiable {
 
 extension Movie {
 
-    static func mock() -> Movie {
-        Movie(wrapperType: "track", kind: "feature-movie", artistID: 1, trackID: 2, artistName: "Jack Johnson",
+    static func mock(trackID: Int = 1) -> Movie {
+        Movie(wrapperType: "track", kind: "feature-movie", artistID: 1, trackID: trackID, artistName: "Jack Johnson",
               trackName: "All At Once: On the Road Tour Documentary",
               trackCensoredName: "", artistViewURL: nil, trackViewURL: "", previewURL: nil,
               artworkUrl30: "https://is1-ssl.mzstatic.com/image/thumb/Video3/v4/80/1d/47/801d4725-5070-1e2a-ab32-dbb240ee8390/UMG_vidcvr_00602547849786_01_RGB72_1400x2100_16UMGIM10177.jpg/30x30bb.jpg", artworkUrl60: "https://is1-ssl.mzstatic.com/image/thumb/Video3/v4/80/1d/47/801d4725-5070-1e2a-ab32-dbb240ee8390/UMG_vidcvr_00602547849786_01_RGB72_1400x2100_16UMGIM10177.jpg/60x60bb.jpg", artworkUrl100: "https://is1-ssl.mzstatic.com/image/thumb/Video3/v4/80/1d/47/801d4725-5070-1e2a-ab32-dbb240ee8390/UMG_vidcvr_00602547849786_01_RGB72_1400x2100_16UMGIM10177.jpg/100x100bb.jpg",
