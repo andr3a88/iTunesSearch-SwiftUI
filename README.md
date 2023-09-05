@@ -10,6 +10,12 @@ The goal of this app is to learn how to use SwiftUI. There is no particular focu
 + Swift 5.9+
 + Deployment target iOS 16+
 
+## 🏞️ Screenshot
+
+| Search  | Song for album | Movies
+|---|---|---|
+| ![Home](./images/home.png) | ![Songs for album](./images/songForAlbum.png) | ![Data Persistence](./images/movies.png) |
+
 ## 🌅 SwiftUI
 
 SwiftUI components and modifiers used:
