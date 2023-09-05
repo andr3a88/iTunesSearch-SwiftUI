@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC4585EF2AA76CD800515DEE /* AlbumListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4585EE2AA76CD800515DEE /* AlbumListViewModelTests.swift */; };
+		FC4585F22AA76D2E00515DEE /* APIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4585F12AA76D2E00515DEE /* APIServiceMock.swift */; };
+		FC4585F52AA78BDB00515DEE /* songsResult.json in Resources */ = {isa = PBXBuildFile; fileRef = FC4585F42AA78BDB00515DEE /* songsResult.json */; };
+		FC4585F72AA78F7800515DEE /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4585F62AA78F7800515DEE /* MockURLProtocol.swift */; };
 		FCA7F29F2A9F2A3300DB9AE0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F29E2A9F2A3300DB9AE0 /* SearchView.swift */; };
 		FCA7F2A12A9F2CD900DB9AE0 /* SearchAllListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2A02A9F2CD900DB9AE0 /* SearchAllListView.swift */; };
 		FCA7F2A32A9F477500DB9AE0 /* SongRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7F2A22A9F477500DB9AE0 /* SongRowView.swift */; };
@@ -61,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC4585EE2AA76CD800515DEE /* AlbumListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModelTests.swift; sourceTree = "<group>"; };
+		FC4585F12AA76D2E00515DEE /* APIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceMock.swift; sourceTree = "<group>"; };
+		FC4585F42AA78BDB00515DEE /* songsResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = songsResult.json; sourceTree = "<group>"; };
+		FC4585F62AA78F7800515DEE /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		FCA7F29E2A9F2A3300DB9AE0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FCA7F2A02A9F2CD900DB9AE0 /* SearchAllListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllListView.swift; sourceTree = "<group>"; };
 		FCA7F2A22A9F477500DB9AE0 /* SongRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRowView.swift; sourceTree = "<group>"; };
@@ -125,6 +133,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC4585ED2AA76CBA00515DEE /* AlbumList */ = {
+			isa = PBXGroup;
+			children = (
+				FC4585EE2AA76CD800515DEE /* AlbumListViewModelTests.swift */,
+			);
+			path = AlbumList;
+			sourceTree = "<group>";
+		};
+		FC4585F02AA76D1600515DEE /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				FC4585F62AA78F7800515DEE /* MockURLProtocol.swift */,
+				FC4585F12AA76D2E00515DEE /* APIServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		FC4585F32AA78BDB00515DEE /* JsonResponse */ = {
+			isa = PBXGroup;
+			children = (
+				FC4585F42AA78BDB00515DEE /* songsResult.json */,
+			);
+			path = JsonResponse;
+			sourceTree = "<group>";
+		};
 		FCA7F29D2A9F2A1900DB9AE0 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +254,8 @@
 				FCB8EE1A2A9DF7D30034EFDA /* iTunesSearchTests.swift */,
 				FCD772E02A9E0316002D1B6F /* Presentation */,
 				FCA7F2BE2AA0A5A900DB9AE0 /* Services */,
+				FC4585F32AA78BDB00515DEE /* JsonResponse */,
+				FC4585F02AA76D1600515DEE /* Mocks */,
 			);
 			path = iTunesSearchTests;
 			sourceTree = "<group>";
@@ -266,6 +301,7 @@
 		FCD772E02A9E0316002D1B6F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FC4585ED2AA76CBA00515DEE /* AlbumList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -393,6 +429,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4585F52AA78BDB00515DEE /* songsResult.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +484,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4585F22AA76D2E00515DEE /* APIServiceMock.swift in Sources */,
+				FC4585EF2AA76CD800515DEE /* AlbumListViewModelTests.swift in Sources */,
+				FC4585F72AA78F7800515DEE /* MockURLProtocol.swift in Sources */,
 				FCA7F2C22AA0A5D600DB9AE0 /* APIServiceTests.swift in Sources */,
 				FCB8EE1B2A9DF7D30034EFDA /* iTunesSearchTests.swift in Sources */,
 			);

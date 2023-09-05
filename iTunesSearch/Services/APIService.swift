@@ -62,17 +62,19 @@ final class APIService: APIServiceType {
 
         session.dataTask(with: url) { data, response, error in
             if let error = error as? URLError {
-                completion(Result.failure(APIError.urlSession(error)))
+                completion(.failure(APIError.urlSession(error)))
             } else if let response = response as? HTTPURLResponse, !(200...299).contains(response.statusCode) {
-                completion(Result.failure(APIError.badResponse(response.statusCode)))
+                completion(.failure(APIError.badResponse(response.statusCode)))
             } else if let data = data {
                 do {
                     let result = try JSONDecoder().decode(type, from: data)
-                    completion(Result.success(result))
+                    completion(.success(result))
                 } catch {
-                    completion(Result.failure(.decoding(error as? DecodingError)))
+                    completion(.failure(.decoding(error as? DecodingError)))
                     print("\(error.localizedDescription)")
                 }
+            } else {
+                completion(.failure(APIError.unknown))
             }
         }.resume()
     }
