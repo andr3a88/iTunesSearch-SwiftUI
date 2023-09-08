@@ -22,7 +22,7 @@ struct AlbumHeaderDetailView: View {
                 Text(album.artistName)
                 Text(album.primaryGenreName)
                 Text("\(album.trackCount) songs")
-                Text("Released \(formattedDate(value: album.releaseDate ?? ""))")
+                Text("Released \(album.releaseDate?.formatDate() ?? "")")
             }
             .font(.caption)
             .foregroundColor(.gray)
@@ -40,22 +40,6 @@ struct AlbumHeaderDetailView: View {
                 .edgesIgnoringSafeArea(.top)
                 .shadow(radius: 5)
         )
-    }
-
-    private func formattedDate(value: String) -> String {
-        var dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-
-        guard let date = dateFormatter.date(from: value) else {
-            return ""
-        }
-
-        dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-
-        return dateFormatter.string(from: date)
     }
 }
 

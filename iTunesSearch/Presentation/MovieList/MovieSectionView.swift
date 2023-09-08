@@ -15,15 +15,20 @@ struct MovieSectionView: View {
         ScrollView(.horizontal) {
             LazyHStack(alignment: .top, spacing: 0) {
                 ForEach(movies) { movie in
-                    VStack(alignment: .leading) {
-                        ImageLoadingView(urlImage: movie.artworkUrl100, size: 100)
-                        Text(movie.trackName)
-                        Text(movie.primaryGenreName)
-                            .foregroundColor(.gray)
+                    NavigationLink {
+                        MovieDetailView(movie: movie)
+                    } label: {
+                        VStack(alignment: .leading) {
+                            ImageLoadingView(urlImage: movie.artworkUrl100, size: 100)
+                            Text(movie.trackName)
+                            Text(movie.primaryGenreName)
+                                .foregroundColor(.gray)
+                        }
+                        .lineLimit(2)
+                        .frame(width: 100)
+                        .font(.caption)
                     }
-                    .lineLimit(2)
-                    .frame(width: 100)
-                    .font(.caption)
+                    .buttonStyle(.plain)
                 }
             }
             .padding(.horizontal)

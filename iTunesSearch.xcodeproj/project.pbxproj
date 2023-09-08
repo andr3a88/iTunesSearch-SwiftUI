@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC2004432AAB714700A27AD9 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2004422AAB714700A27AD9 /* MovieDetailView.swift */; };
+		FC2004452AAB767000A27AD9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2004442AAB767000A27AD9 /* Extensions.swift */; };
 		FC4585EF2AA76CD800515DEE /* AlbumListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4585EE2AA76CD800515DEE /* AlbumListViewModelTests.swift */; };
 		FC4585F22AA76D2E00515DEE /* APIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4585F12AA76D2E00515DEE /* APIServiceMock.swift */; };
 		FC4585F52AA78BDB00515DEE /* songsResult.json in Resources */ = {isa = PBXBuildFile; fileRef = FC4585F42AA78BDB00515DEE /* songsResult.json */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		FC2004422AAB714700A27AD9 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		FC2004442AAB767000A27AD9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FC4585EE2AA76CD800515DEE /* AlbumListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModelTests.swift; sourceTree = "<group>"; };
 		FC4585F12AA76D2E00515DEE /* APIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceMock.swift; sourceTree = "<group>"; };
 		FC4585F42AA78BDB00515DEE /* songsResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = songsResult.json; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				FCA7F2A52A9F488900DB9AE0 /* BuyButtonStyle.swift */,
 				FCA7F2A72A9F4A6B00DB9AE0 /* ImageLoadingView.swift */,
 				FCD772FA2A9E5676002D1B6F /* SearchPlaceholderView.swift */,
+				FC2004442AAB767000A27AD9 /* Extensions.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				FCA7F2B42A9F527A00DB9AE0 /* AlbumSectionView.swift in Sources */,
 				FC2004432AAB714700A27AD9 /* MovieDetailView.swift in Sources */,
 				FCD772DA2A9DF847002D1B6F /* Song.swift in Sources */,
+				FC2004452AAB767000A27AD9 /* Extensions.swift in Sources */,
 				FCD772E72A9E2D9B002D1B6F /* APIService.swift in Sources */,
 				FCA7F2C92AA0EC0E00DB9AE0 /* SongGridView.swift in Sources */,
 				FCA7F2A32A9F477500DB9AE0 /* SongRowView.swift in Sources */,

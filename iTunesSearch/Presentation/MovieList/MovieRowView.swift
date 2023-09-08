@@ -19,7 +19,7 @@ struct MovieRowView: View {
                 Text(movie.trackName)
                 Text(movie.primaryGenreName)
                     .foregroundColor(.gray)
-                Text(movie.releaseDate ?? "")
+                Text("Released \(movie.releaseDate?.formatDate() ?? "")")
                     .foregroundColor(.gray)
             }
             .font(.caption)
