@@ -17,10 +17,12 @@ final class MovieListViewModel: ObservableObject {
     private let limit: Int = 10
     private var page: Int = 0
 
-    private let service: APIServiceType = APIService()
+    private let service: APIServiceType
     private var subscriptions = Set<AnyCancellable>()
 
-    init() {
+    init(service: APIServiceType = APIService()) {
+        self.service = service
+
         $searchTerm
             .removeDuplicates()
             .dropFirst()

@@ -14,7 +14,7 @@ struct MovieSearchView: View {
     private let suggestions = ["Batman", "Avengers", "fast and furious"]
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Group {
                 if viewModel.searchTerm.isEmpty {
                     SearchPlaceholderView(searchTerm: $viewModel.searchTerm,

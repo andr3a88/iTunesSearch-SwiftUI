@@ -1,19 +1,19 @@
 //
-//  AlbumListViewModelTests.swift
+//  SongListViewModelTests.swift
 //  iTunesSearchTests
 //
-//  Created by Andrea Stevanato on 05/09/23.
+//  Created by Andrea Stevanato on 06/09/23.
 //
 
 import Combine
 import XCTest
 @testable import iTunesSearch
 
-final class AlbumListViewModelTests: XCTestCase {
+final class SongListViewModelTests: XCTestCase {
 
     // MARK: Properties
 
-    var sut: AlbumListViewModel!
+    var sut: SongListViewModel!
     var apiService: APIServiceMock!
 
     private var subscriptions = Set<AnyCancellable>()
@@ -22,26 +22,26 @@ final class AlbumListViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         apiService = APIServiceMock()
-        sut = AlbumListViewModel(service: apiService)
+        sut = SongListViewModel(service: apiService)
     }
 
     override func tearDownWithError() throws {
         sut = nil
     }
 
-    func test_load_albums_success() throws {
-        // Configure albums
-        apiService.albums = Array(0..<4).map { Album.mock(collectionID: $0) }
+    func test_load_songs_success() throws {
+        // Configure songs
+        apiService.songs = Array(0..<3).map { Song.mock(trackID: $0) }
 
-        var albums = [Album]()
+        var songs = [Song]()
         let expectation = XCTestExpectation(description: "Expect albums")
 
-        // Trigger load albums
+        // Trigger load songs
         sut.searchTerm = "change search term"
 
-        sut.$albums
+        sut.$songs
             .sink(receiveValue: { result in
-                albums = result
+                songs = result
             })
             .store(in: &subscriptions)
 
@@ -56,7 +56,7 @@ final class AlbumListViewModelTests: XCTestCase {
 
         wait(for: [expectation], timeout: 1.0)
 
-        XCTAssertEqual(albums.count, 4, "Invalid albums count")
-        XCTAssertEqual(albums.first!.collectionID, 0, "The first album has collectionID equal to 0")
+        XCTAssertEqual(songs.count, 3, "Invalid songs count")
+        XCTAssertEqual(songs.first!.trackID, 0, "The first song has trackID equal to 1")
     }
 }

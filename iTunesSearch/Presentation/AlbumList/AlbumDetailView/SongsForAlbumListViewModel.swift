@@ -13,9 +13,11 @@ final class SongsForAlbumListViewModel: ObservableObject {
     @Published var state: FetchState = .initial
 
     private let albumID: Int
-    private let service: APIServiceType = APIService()
+    private let service: APIServiceType
 
-    init(albumID: Int) {
+    init(service: APIServiceType = APIService(),
+         albumID: Int) {
+        self.service = service
         self.albumID = albumID
     }
 

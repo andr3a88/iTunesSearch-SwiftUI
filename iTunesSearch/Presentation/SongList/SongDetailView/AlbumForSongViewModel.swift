@@ -12,7 +12,11 @@ final class AlbumForSongViewModel: ObservableObject {
     @Published var album: Album? = nil
     @Published var state: FetchState = .initial
 
-    private let service: APIServiceType = APIService()
+    private let service: APIServiceType
+
+    init(service: APIServiceType = APIService()) {
+        self.service = service
+    }
 
     func fetch(song: Song) {
         state = .isLoading

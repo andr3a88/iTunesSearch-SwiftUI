@@ -43,7 +43,7 @@ struct AlbumListView: View {
 
 
 #Preview {
-    NavigationView {
+    NavigationStack {
         AlbumListView(viewModel: AlbumListViewModel.mock())
     }
 }

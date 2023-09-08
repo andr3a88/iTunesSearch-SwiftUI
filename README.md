@@ -24,7 +24,7 @@ SwiftUI components and modifiers used:
 + `LazyHStack`, `LazyVStack`
 + `LazyHGrid`
 + `List`
-+ `NavigationView`
++ `NavigationView` and then `NavigationStack
     + `NavigationLink` with destination and label
     + `searchable` modifier
     + navigation title and style modifiers
@@ -54,8 +54,8 @@ API are not well documented. Some properties on `Movie`, `Albums` and `Song` sho
 
 ## 🔨 TODO & Improvements
 
-+ [] Use `NavigationStack` (iOS 16+) 
-+ [] Add some unit tests to view model
++ [X] Use `NavigationStack` (iOS 16+) 
++ [~] Add some unit tests to view model
 + [] Try https://github.com/soundcloud/Axt for testing the views
 + [] Check Dark/Light mode implementation
 + [] Strings catalogs with Xcode 15 and SwiftUI (https://developer.apple.com/videos/play/wwdc2023/10155/) 
@@ -64,5 +64,8 @@ API are not well documented. Some properties on `Movie`, `Albums` and `Song` sho
 
 + https://app.quicktype.io/
 + https://fuckingswiftui.com/
++ https://azamsharp.com/2022/10/06/practical-mv-pattern-crud.html
++ [Lessons learnt rewriting SoundCloud in SwiftUI - Matias Villaverde & Rens Breur](https://vimeo.com/751534042/f1ae29434e)
++ [@SwiftyPlace](https://www.youtube.com/@SwiftyPlace)
 
 

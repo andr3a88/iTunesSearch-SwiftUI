@@ -23,7 +23,7 @@ struct SearchView: View {
     @StateObject private var movieViewModel = MovieListViewModel()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Picker("Select the media",
                        selection: $selectedEntityType,
@@ -61,10 +61,10 @@ struct SearchView: View {
             .navigationTitle("Search")
             .navigationBarTitleDisplayMode(.inline)
         }
-        .onChange(of: selectedEntityType, { oldValue, newValue in
+        .onChange(of: selectedEntityType, perform: { newValue in
             updateViewModels(for: searchTerm, type: newValue)
         })
-        .onChange(of: searchTerm) { oldValue, newValue in
+        .onChange(of: searchTerm) { newValue in
             updateViewModels(for: newValue, type: selectedEntityType)
         }
     }

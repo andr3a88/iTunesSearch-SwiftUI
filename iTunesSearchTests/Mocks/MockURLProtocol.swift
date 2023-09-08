@@ -7,19 +7,7 @@
 
 import Foundation
 
-protocol URLSessionDataTaskProtocol {
-    func resume()
-    func cancel()
-}
-
-protocol URLSessionProtocol {
-    func dataTask(with request: URLRequest,
-                  completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void ) -> URLSessionDataTask
-}
-
-extension URLSession : URLSessionProtocol{}
-extension URLSessionDataTask : URLSessionDataTaskProtocol{}
-
+/// Intercept network request to provide a custom response
 final class MockURLProtocol: URLProtocol {
 
     static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse, Data?))?

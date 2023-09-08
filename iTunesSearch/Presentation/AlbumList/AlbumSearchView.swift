@@ -14,7 +14,7 @@ struct AlbumSearchView: View {
     private let suggestions = ["Daft Punk", "Martin Garrix", "Alesso"]
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Group {
                 if viewModel.searchTerm.isEmpty {
                     SearchPlaceholderView(searchTerm: $viewModel.searchTerm, 

@@ -57,6 +57,37 @@ final class APIServiceTests: XCTestCase {
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 10.0)
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func test_failure_response_decoding_error() {
+
+        let data = Data()
+        MockURLProtocol.requestHandler = { request in
+            guard let url = request.url else {
+                throw APIError.badURL
+            }
+
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            return (response, data)
+        }
+
+        let expectation = expectation(description: "API call")
+
+        sut.fetchSongs(for: 1) { result in
+            switch result {
+            case .success:
+                XCTFail("Success response was not expected")
+            case .failure(let error):
+                switch error {
+                case let .decoding(decodingError):
+                    XCTAssertNotNil(decodingError, "Parsing error was expected.")
+                default:
+                    XCTFail("Incorrect error received.")
+                }
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
     }
 }
