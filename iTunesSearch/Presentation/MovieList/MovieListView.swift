@@ -14,7 +14,12 @@ struct MovieListView: View {
     var body: some View {
         List {
             ForEach(viewModel.movies) { movie in
-                MovieRowView(movie: movie)
+                NavigationLink {
+                    MovieDetailView(movie: movie)
+                } label: {
+                    MovieRowView(movie: movie)
+                }
+                .buttonStyle(.plain)
             }
             switch viewModel.state {
             case .initial:

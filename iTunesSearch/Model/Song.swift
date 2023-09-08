@@ -41,9 +41,7 @@ struct Song: Codable, Identifiable, Equatable {
     let primaryGenreName: String
     let collectionArtistName: String?
 
-    var id: Int {
-        trackID
-    }
+    let id = UUID()
 
     enum CodingKeys: String, CodingKey {
         case wrapperType

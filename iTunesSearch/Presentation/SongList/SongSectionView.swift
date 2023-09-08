@@ -27,6 +27,7 @@ struct SongSectionView: View {
             }
             .padding([.horizontal, .bottom])
         }
+        
     }
 }
 

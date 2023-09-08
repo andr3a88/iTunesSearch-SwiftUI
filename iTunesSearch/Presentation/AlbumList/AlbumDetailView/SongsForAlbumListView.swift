@@ -23,7 +23,7 @@ struct SongsForAlbumListView: View {
                     SongGridView(songs: songsForAlbumViewModel.songs,
                                  selectedSong: selectedSong)
                     .onAppear {
-                        print("scroll in list with \(songsForAlbumViewModel.songs.count)")
+                        print("Scroll list to selected song. Songs: \(songsForAlbumViewModel.songs.count)")
                         proxy.scrollTo(selectedSong?.trackNumber, anchor: .center)
                     }
                 }

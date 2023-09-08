@@ -15,6 +15,7 @@ struct SongDetailView: View {
     @StateObject var albumForSongViewModel = AlbumForSongViewModel()
 
     init(song: Song) {
+        print("init Song detail \(song.trackID)")
         self.song = song
         self._songsForAlbumViewModel = StateObject(wrappedValue: SongsForAlbumListViewModel(albumID: song.collectionID))
     }
@@ -23,6 +24,9 @@ struct SongDetailView: View {
         VStack {
             if let album = albumForSongViewModel.album {
                 AlbumHeaderDetailView(album: album)
+                    .navigationTitle(Text("\(album.collectionName)"))
+                    .navigationBarTitleDisplayMode(.inline)
+
             } else {
                 ProgressView()
                     .progressViewStyle(.circular)
@@ -34,6 +38,7 @@ struct SongDetailView: View {
             songsForAlbumViewModel.fetch()
             albumForSongViewModel.fetch(song: song)
         }
+
     }
 }
 

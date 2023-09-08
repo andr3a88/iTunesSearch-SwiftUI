@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC2004432AAB714700A27AD9 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2004422AAB714700A27AD9 /* MovieDetailView.swift */; };
 		FC4585EF2AA76CD800515DEE /* AlbumListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4585EE2AA76CD800515DEE /* AlbumListViewModelTests.swift */; };
 		FC4585F22AA76D2E00515DEE /* APIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4585F12AA76D2E00515DEE /* APIServiceMock.swift */; };
 		FC4585F52AA78BDB00515DEE /* songsResult.json in Resources */ = {isa = PBXBuildFile; fileRef = FC4585F42AA78BDB00515DEE /* songsResult.json */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC2004422AAB714700A27AD9 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		FC4585EE2AA76CD800515DEE /* AlbumListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModelTests.swift; sourceTree = "<group>"; };
 		FC4585F12AA76D2E00515DEE /* APIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceMock.swift; sourceTree = "<group>"; };
 		FC4585F42AA78BDB00515DEE /* songsResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = songsResult.json; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC2004412AAB712D00A27AD9 /* MovieDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				FC2004422AAB714700A27AD9 /* MovieDetailView.swift */,
+			);
+			path = MovieDetailView;
+			sourceTree = "<group>";
+		};
 		FC4585ED2AA76CBA00515DEE /* AlbumList */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +356,7 @@
 				FCD772EC2A9E3465002D1B6F /* MovieListViewModel.swift */,
 				FCA7F2AD2A9F4DE200DB9AE0 /* MovieRowView.swift */,
 				FCA7F2B12A9F526800DB9AE0 /* MovieSectionView.swift */,
+				FC2004412AAB712D00A27AD9 /* MovieDetailView */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -467,6 +478,7 @@
 				FCA7F2B22A9F526800DB9AE0 /* MovieSectionView.swift in Sources */,
 				FCA7F2AE2A9F4DE200DB9AE0 /* MovieRowView.swift in Sources */,
 				FCA7F2B42A9F527A00DB9AE0 /* AlbumSectionView.swift in Sources */,
+				FC2004432AAB714700A27AD9 /* MovieDetailView.swift in Sources */,
 				FCD772DA2A9DF847002D1B6F /* Song.swift in Sources */,
 				FCD772E72A9E2D9B002D1B6F /* APIService.swift in Sources */,
 				FCA7F2C92AA0EC0E00DB9AE0 /* SongGridView.swift in Sources */,

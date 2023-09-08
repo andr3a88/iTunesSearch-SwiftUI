@@ -14,9 +14,9 @@ struct AlbumDetailView: View {
     @StateObject var songsForAlbumViewModel: SongsForAlbumListViewModel
 
     init(album: Album) {
-        print("init Album detail \(album.id)")
+        print("init Album detail \(album.collectionID)")
         self.album = album
-        self._songsForAlbumViewModel = StateObject(wrappedValue: SongsForAlbumListViewModel(albumID: album.id))
+        self._songsForAlbumViewModel = StateObject(wrappedValue: SongsForAlbumListViewModel(albumID: album.collectionID))
     }
 
     var body: some View {

@@ -44,9 +44,7 @@ struct Movie: Codable, Identifiable {
     let shortDescription: String?
     let longDescription: String?
 
-    var id: Int {
-        trackID
-    }
+    let id = UUID()
 
     enum CodingKeys: String, CodingKey {
         case wrapperType, kind

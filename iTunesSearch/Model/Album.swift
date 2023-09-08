@@ -39,9 +39,7 @@ struct Album: Codable, Identifiable {
     let releaseDate: String?
     let primaryGenreName: String
 
-    var id: Int {
-        collectionID
-    }
+    let id = UUID()
 
     enum CodingKeys: String, CodingKey {
         case wrapperType, collectionType
