@@ -14,9 +14,7 @@ struct AlbumListView: View {
     var body: some View {
         List {
             ForEach(viewModel.albums) { album in
-                NavigationLink {
-                    AlbumDetailView(album: album)
-                } label: {
+                NavigationLink(value: album) {
                     AlbumRowView(album: album)
                 }
             }
@@ -38,12 +36,13 @@ struct AlbumListView: View {
             }
         }
         .listStyle(.grouped)
+        .navigationDestination(for: Album.self) { album in
+            AlbumDetailView(album: album)
+        }
     }
 }
 
 
 #Preview {
-    NavigationStack {
         AlbumListView(viewModel: AlbumListViewModel.mock())
-    }
 }

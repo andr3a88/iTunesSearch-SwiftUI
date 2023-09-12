@@ -16,7 +16,7 @@ struct AlbumResult: Codable {
 
 // MARK: - Album
 
-struct Album: Codable, Identifiable {
+struct Album: Codable, Identifiable, Hashable {
     
     let wrapperType: String
     let collectionType: String

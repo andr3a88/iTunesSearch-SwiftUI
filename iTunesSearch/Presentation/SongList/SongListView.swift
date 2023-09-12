@@ -14,9 +14,7 @@ struct SongListView: View {
     var body: some View {
         List {
             ForEach(viewModel.songs) { song in
-                NavigationLink {
-                    SongDetailView(song: song)
-                } label: {
+                NavigationLink(value: song) {
                     SongRowView(song: song)
                 }
                 .buttonStyle(.plain)
@@ -39,6 +37,9 @@ struct SongListView: View {
             }
         }
         .listStyle(.grouped)
+        .navigationDestination(for: Song.self) { song in
+            SongDetailView(song: song)
+        }
     }
 }
 

@@ -16,9 +16,7 @@ struct AlbumSectionView: View {
             LazyHStack(alignment: .top) {
                 ForEach(albums) { album in
                     VStack(alignment: .leading) {
-                        NavigationLink {
-                            AlbumDetailView(album: album)
-                        } label: {
+                        NavigationLink(value: album) {
                             VStack {
                                 ImageLoadingView(urlImage: album.artworkUrl100, size: 100)
                                 Text(album.collectionName)

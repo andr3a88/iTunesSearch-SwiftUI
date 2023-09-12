@@ -16,12 +16,10 @@ struct SongSectionView: View {
         ScrollView(.horizontal) {
             LazyHGrid(rows: rows, spacing: 15) {
                 ForEach(songs) { song in
-                    NavigationLink {
-                        SongDetailView(song: song)
-                    } label: {
+                    NavigationLink(value: song, label: {
                         SongRowView(song: song)
                             .frame(width: 300)
-                    }
+                    })
                     .buttonStyle(.plain)
                 }
             }

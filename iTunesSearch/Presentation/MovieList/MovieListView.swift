@@ -14,9 +14,7 @@ struct MovieListView: View {
     var body: some View {
         List {
             ForEach(viewModel.movies) { movie in
-                NavigationLink {
-                    MovieDetailView(movie: movie)
-                } label: {
+                NavigationLink(value: movie) {
                     MovieRowView(movie: movie)
                 }
                 .buttonStyle(.plain)
@@ -39,6 +37,9 @@ struct MovieListView: View {
             }
         }
         .listStyle(.grouped)
+        .navigationDestination(for: Movie.self) { movie in
+            MovieDetailView(movie: movie)
+        }
     }
 }
 

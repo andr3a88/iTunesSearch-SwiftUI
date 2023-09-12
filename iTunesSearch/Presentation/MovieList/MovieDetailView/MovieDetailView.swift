@@ -11,6 +11,11 @@ struct MovieDetailView: View {
 
     let movie: Movie
 
+    init(movie: Movie) {
+        print("init Movie detail \(movie.trackID)")
+        self.movie = movie
+    }
+
     var body: some View {
         MovieRowView(movie: movie)
             .padding()

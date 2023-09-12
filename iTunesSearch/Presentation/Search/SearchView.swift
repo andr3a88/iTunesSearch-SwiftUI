@@ -60,6 +60,15 @@ struct SearchView: View {
             .searchable(text: $searchTerm)
             .navigationTitle("Search")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(for: Song.self) { song in
+                SongDetailView(song: song)
+            }
+            .navigationDestination(for: Album.self) { album in
+                AlbumDetailView(album: album)
+            }
+            .navigationDestination(for: Movie.self) { movie in
+                MovieDetailView(movie: movie)
+            }
         }
         .onChange(of: selectedEntityType, perform: { newValue in
             updateViewModels(for: searchTerm, type: newValue)

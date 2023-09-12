@@ -15,9 +15,7 @@ struct MovieSectionView: View {
         ScrollView(.horizontal) {
             LazyHStack(alignment: .top, spacing: 0) {
                 ForEach(movies) { movie in
-                    NavigationLink {
-                        MovieDetailView(movie: movie)
-                    } label: {
+                    NavigationLink(value: movie) {
                         VStack(alignment: .leading) {
                             ImageLoadingView(urlImage: movie.artworkUrl100, size: 100)
                             Text(movie.trackName)
