@@ -36,7 +36,7 @@ struct Movie: Codable, Identifiable, Hashable {
     let releaseDate: String?
     let collectionExplicitness: String
     let trackExplicitness: String
-    let trackTimeMillis: Int
+    let trackTimeMillis: Int?
     let country: String
     let currency: String
     let primaryGenreName: String

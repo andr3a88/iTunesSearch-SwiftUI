@@ -23,53 +23,42 @@ struct SearchView: View {
     @StateObject private var movieViewModel = MovieListViewModel()
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                Picker("Select the media",
-                       selection: $selectedEntityType,
-                       content: {
-                    ForEach(EntityType.allCases) { type in
-                        Text(type.title)
-                            .tag(type)
-                    }
-                })
-                .pickerStyle(.segmented)
-                .padding(.horizontal)
-                Divider()
+        VStack {
+            Picker("Select the media",
+                   selection: $selectedEntityType,
+                   content: {
+                ForEach(EntityType.allCases) { type in
+                    Text(type.title)
+                        .tag(type)
+                }
+            })
+            .pickerStyle(.segmented)
+            .padding(.horizontal)
+            Divider()
 
-                if searchTerm.isEmpty {
-                    SearchPlaceholderView(searchTerm: $searchTerm, suggestions: Self.suggestions)
-                        .frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                } else {
-                    switch selectedEntityType {
-                    case .all:
-                        SearchAllListView(albumViewModel: albumViewModel,
-                                          songViewModel: songViewModel,
-                                          movieViewModel: movieViewModel)
-                    case .album:
-                        AlbumListView(viewModel: albumViewModel)
+            if searchTerm.isEmpty {
+                SearchPlaceholderView(searchTerm: $searchTerm, suggestions: Self.suggestions)
+                    .frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+            } else {
+                switch selectedEntityType {
+                case .all:
+                    SearchAllListView(albumViewModel: albumViewModel,
+                                      songViewModel: songViewModel,
+                                      movieViewModel: movieViewModel)
+                case .album:
+                    AlbumListView(viewModel: albumViewModel)
 
-                    case .song:
-                        SongListView(viewModel: songViewModel)
+                case .song:
+                    SongListView(viewModel: songViewModel)
 
-                    case .movie:
-                        MovieListView(viewModel: movieViewModel)
-                    }
+                case .movie:
+                    MovieListView(viewModel: movieViewModel)
                 }
             }
-            .searchable(text: $searchTerm)
-            .navigationTitle("Search")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: Song.self) { song in
-                SongDetailView(song: song)
-            }
-            .navigationDestination(for: Album.self) { album in
-                AlbumDetailView(album: album)
-            }
-            .navigationDestination(for: Movie.self) { movie in
-                MovieDetailView(movie: movie)
-            }
         }
+        .searchable(text: $searchTerm)
+        .navigationTitle("Search")
+        .navigationBarTitleDisplayMode(.inline)
         .onChange(of: selectedEntityType, perform: { newValue in
             updateViewModels(for: searchTerm, type: newValue)
         })

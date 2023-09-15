@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SongListView: View {
-
+    
     @ObservedObject var viewModel: SongListViewModel
-
+    
     var body: some View {
         List {
             ForEach(viewModel.songs) { song in
@@ -37,9 +37,6 @@ struct SongListView: View {
             }
         }
         .listStyle(.grouped)
-        .navigationDestination(for: Song.self) { song in
-            SongDetailView(song: song)
-        }
     }
 }
 

@@ -37,9 +37,6 @@ struct MovieListView: View {
             }
         }
         .listStyle(.grouped)
-        .navigationDestination(for: Movie.self) { movie in
-            MovieDetailView(movie: movie)
-        }
     }
 }
 

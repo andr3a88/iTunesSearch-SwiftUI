@@ -7,7 +7,15 @@
 
 import SwiftUI
 
+
+
 struct SearchAllListView: View {
+
+    enum SeeAll: String {
+        case songs
+        case albums
+        case movies
+    }
 
     @ObservedObject var albumViewModel: AlbumListViewModel
     @ObservedObject var songViewModel: SongListViewModel
@@ -23,9 +31,7 @@ struct SearchAllListView: View {
 
                     Spacer()
 
-                    NavigationLink {
-                        SongListView(viewModel: songViewModel)
-                    } label: {
+                    NavigationLink(value: SeeAll.songs) {
                         HStack {
                             Text("See all")
                             Image(systemName: "chevron.right")
@@ -44,9 +50,7 @@ struct SearchAllListView: View {
 
                     Spacer()
 
-                    NavigationLink {
-                        AlbumListView(viewModel: albumViewModel)
-                    } label: {
+                    NavigationLink(value: SeeAll.albums) {
                         HStack {
                             Text("See all")
                             Image(systemName: "chevron.right")
@@ -65,9 +69,7 @@ struct SearchAllListView: View {
 
                     Spacer()
 
-                    NavigationLink {
-                        MovieListView(viewModel: movieViewModel)
-                    } label: {
+                    NavigationLink(value: SeeAll.movies) {
                         HStack {
                             Text("See all")
                             Image(systemName: "chevron.right")
@@ -78,6 +80,16 @@ struct SearchAllListView: View {
                 MovieSectionView(movies: movieViewModel.movies)
 
                 Spacer()
+            }
+        }
+        .navigationDestination(for: SeeAll.self) { section in
+            switch section {
+            case .songs:
+                SongListView(viewModel: songViewModel)
+            case .albums:
+                AlbumListView(viewModel: albumViewModel)
+            case .movies:
+                MovieListView(viewModel: movieViewModel)
             }
         }
     }

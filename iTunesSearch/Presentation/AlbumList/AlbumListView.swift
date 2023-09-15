@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct AlbumListView: View {
-
+    
     @ObservedObject var viewModel: AlbumListViewModel
-
+    
     var body: some View {
         List {
             ForEach(viewModel.albums) { album in
@@ -36,13 +36,10 @@ struct AlbumListView: View {
             }
         }
         .listStyle(.grouped)
-        .navigationDestination(for: Album.self) { album in
-            AlbumDetailView(album: album)
-        }
     }
 }
 
 
 #Preview {
-        AlbumListView(viewModel: AlbumListViewModel.mock())
+    AlbumListView(viewModel: AlbumListViewModel.mock())
 }

@@ -20,7 +20,7 @@ struct MovieDetailView: View {
         MovieRowView(movie: movie)
             .padding()
         ScrollView {
-
+            Text("Movie detail view")
         }
         .navigationTitle("\(movie.trackName)")
         .navigationBarTitleDisplayMode(.inline)

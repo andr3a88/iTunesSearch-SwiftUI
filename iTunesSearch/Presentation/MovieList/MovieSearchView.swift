@@ -14,18 +14,16 @@ struct MovieSearchView: View {
     private let suggestions = ["Batman", "Avengers", "fast and furious"]
 
     var body: some View {
-        NavigationStack {
-            Group {
-                if viewModel.searchTerm.isEmpty {
-                    SearchPlaceholderView(searchTerm: $viewModel.searchTerm,
-                                          suggestions: suggestions)
-                } else {
-                    MovieListView(viewModel: viewModel)
-                }
+        Group {
+            if viewModel.searchTerm.isEmpty {
+                SearchPlaceholderView(searchTerm: $viewModel.searchTerm,
+                                      suggestions: suggestions)
+            } else {
+                MovieListView(viewModel: viewModel)
             }
-            .searchable(text: $viewModel.searchTerm)
-            .navigationTitle("Search Movies")
         }
+        .searchable(text: $viewModel.searchTerm)
+        .navigationTitle("Search Movies")
     }
 }
 

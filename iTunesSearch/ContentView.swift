@@ -10,22 +10,48 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            SearchView()
-                .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
-            AlbumSearchView()
-                .tabItem {
-                    Label("Albums", systemImage: "music.quarternote.3")
-                }
-            SongSearchView()
-                .tabItem {
-                    Label("Songs", systemImage: "music.note")
-                }
-            MovieSearchView()
-                .tabItem {
-                    Label("Movies", systemImage: "film")
-                }
+            NavigationStack {
+                SearchView()
+                    .navigationDestination(for: Song.self) { song in
+                        SongDetailView(song: song)
+                    }
+                    .navigationDestination(for: Album.self) { album in
+                        AlbumDetailView(album: album)
+                    }
+                    .navigationDestination(for: Movie.self) { movie in
+                        MovieDetailView(movie: movie)
+                    }
+            }
+            .tabItem {
+                Label("Search", systemImage: "magnifyingglass")
+            }
+            NavigationStack {
+                AlbumSearchView()
+                    .navigationDestination(for: Album.self) { album in
+                        AlbumDetailView(album: album)
+                    }
+            }
+            .tabItem {
+                Label("Albums", systemImage: "music.quarternote.3")
+            }
+            NavigationStack {
+                SongSearchView()
+                    .navigationDestination(for: Song.self) { song in
+                        SongDetailView(song: song)
+                    }
+            }
+            .tabItem {
+                Label("Songs", systemImage: "music.note")
+            }
+            NavigationStack {
+                MovieSearchView()
+                    .navigationDestination(for: Movie.self) { movie in
+                        MovieDetailView(movie: movie)
+                    }
+            }
+            .tabItem {
+                Label("Movies", systemImage: "film")
+            }
         }
     }
 }

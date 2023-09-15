@@ -8,24 +8,22 @@
 import SwiftUI
 
 struct AlbumSearchView: View {
-    
+
     @StateObject var viewModel = AlbumListViewModel()
 
     private let suggestions = ["Daft Punk", "Martin Garrix", "Alesso"]
 
     var body: some View {
-        NavigationStack {
-            Group {
-                if viewModel.searchTerm.isEmpty {
-                    SearchPlaceholderView(searchTerm: $viewModel.searchTerm, 
-                                          suggestions: suggestions)
-                } else {
-                    AlbumListView(viewModel: viewModel)
-                }
+        Group {
+            if viewModel.searchTerm.isEmpty {
+                SearchPlaceholderView(searchTerm: $viewModel.searchTerm,
+                                      suggestions: suggestions)
+            } else {
+                AlbumListView(viewModel: viewModel)
             }
-            .searchable(text: $viewModel.searchTerm)
-            .navigationTitle("Search Albums")
         }
+        .searchable(text: $viewModel.searchTerm)
+        .navigationTitle("Search Albums")
     }
 }
 

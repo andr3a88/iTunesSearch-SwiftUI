@@ -71,7 +71,7 @@ final class APIService: APIServiceType {
                     completion(.success(result))
                 } catch {
                     completion(.failure(.decoding(error as? DecodingError)))
-                    print("\(error.localizedDescription)")
+                    print("\((error as? DecodingError).debugDescription)")
                 }
             } else {
                 completion(.failure(APIError.unknown))
