@@ -16,6 +16,11 @@ struct SongResult: Codable {
 
 // MARK: - Song
 struct Song: Codable, Identifiable, Equatable, Hashable {
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.trackID == rhs.trackID
+    }
+    
     let wrapperType: String
     let artistID: Int
     let collectionID: Int

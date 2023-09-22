@@ -51,6 +51,8 @@ struct SongGridView: View {
 }
 
 #Preview {
-    SongGridView(songs: [Song.mock(trackID: 1), Song.mock(trackID: 2), Song.mock(trackID: 3)],
-                 selectedSong: Song.mock(trackID: 2))
+    let songs: [Song] = { Array(0..<10).map { Song.mock(trackID: $0) } }()
+    
+    return SongGridView(songs: songs,
+                        selectedSong: Song.mock(trackID: 5))
 }
