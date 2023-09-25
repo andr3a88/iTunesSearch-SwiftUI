@@ -18,18 +18,24 @@ final class AlbumListViewModel: ObservableObject {
     private var page: Int = 0
 
     private let service: APIServiceType
+    private let recentSearchRepository: RecentSearchRepositoryType
+    
     private var subscriptions = Set<AnyCancellable>()
 
-    init(service: APIServiceType = APIService()) {
+    init(service: APIServiceType = APIService(),
+         recentSearchRepository: RecentSearchRepositoryType = RecentSearchRepository()) {
         self.service = service
+        self.recentSearchRepository = recentSearchRepository
         
         $searchTerm
             .removeDuplicates()
             .dropFirst()
-            .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
+            .filter { !$0.isEmpty }
+            .debounce(for: .seconds(1.0), scheduler: RunLoop.main)
             .sink { [weak self] term in
                 self?.clear()
                 self?.fetchAlbum(searchTerm: term)
+                self?.recentSearchRepository.store(searchTerm: term)
             }.store(in: &subscriptions)
     }
 

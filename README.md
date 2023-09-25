@@ -54,7 +54,8 @@ API are not well documented. Some properties on `Movie`, `Albums` and `Song` sho
 
 ## 🔨 TODO & Improvements
 
-+ [X] Use `NavigationStack` and `NavigationLink` with value (iOS 16+) 
++ [X] Use `NavigationStack` and `NavigationLink` with value (iOS 16+)
++ [X] Add a widget to display the recent search 
 + [~] Add some unit tests to view model
 + [] Try https://github.com/soundcloud/Axt for testing the views
 + [] Check Dark/Light mode implementation
