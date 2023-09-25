@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct SearchView: View {
 
@@ -64,6 +65,10 @@ struct SearchView: View {
         })
         .onChange(of: searchTerm) { newValue in
             updateViewModels(for: newValue, type: selectedEntityType)
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+        .task {
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
 
