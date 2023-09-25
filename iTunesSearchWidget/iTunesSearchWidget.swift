@@ -57,8 +57,7 @@ struct iTunesSearchWidgetEntryView : View {
                 Text(suggestion)
                     .font(.footnote)
             }
-            
-            
+            Spacer()
         }
     }
 }
@@ -82,7 +81,7 @@ struct iTunesSearchWidget: Widget {
     }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .systemMedium) {
     iTunesSearchWidget()
 } timeline: {
     SimpleEntry(date: .now, suggestions: Array(0..<5).map { "Search\($0)"})
