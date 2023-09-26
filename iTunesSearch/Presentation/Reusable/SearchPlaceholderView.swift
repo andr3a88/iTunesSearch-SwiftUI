@@ -29,6 +29,5 @@ struct SearchPlaceholderView: View {
 }
 
 #Preview {
-    SearchPlaceholderView(searchTerm: .constant(""), suggestions: ["Avicii", "Marting Garrix", "Alesso"]
-)
+    SearchPlaceholderView(searchTerm: .constant(""), suggestions: ["Avicii", "Marting Garrix", "Alesso"])
 }

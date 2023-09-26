@@ -15,6 +15,7 @@ The goal of this app is to learn how to use SwiftUI. There is no particular focu
 | Search  | Song for album | Movies
 |---|---|---|
 | ![Home](./images/home.png) | ![Songs for album](./images/songForAlbum.png) | ![Data Persistence](./images/movies.png) |
+| ![Search](./images/search.png) | ![Widget](./images/widget.png) | |
 
 ## 🌅 SwiftUI
 
@@ -54,8 +55,8 @@ API are not well documented. Some properties on `Movie`, `Albums` and `Song` sho
 
 ## 🔨 TODO & Improvements
 
-+ [X] Use `NavigationStack` and `NavigationLink` with value (iOS 16+)
-+ [X] Add a widget to display the recent search 
++ [X] Add a widget to display the recent search using user defaults group
++ [X] Use `NavigationStack` and `NavigationLink` with value (iOS 16+) 
 + [~] Add some unit tests to view model
 + [] Try https://github.com/soundcloud/Axt for testing the views
 + [] Check Dark/Light mode implementation

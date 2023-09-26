@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let container: DIContainer
+    
+    init(container: DIContainer) {
+        self.container = container
+    }
+    
     var body: some View {
         TabView {
             NavigationStack {
-                SearchView()
+                SearchView(container: container)
                     .navigationDestination(for: Song.self) { song in
                         SongDetailView(song: song)
                     }
@@ -57,5 +64,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(container: DIContainer())
 }

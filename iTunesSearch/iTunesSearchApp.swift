@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct iTunesSearchApp: App {
+    
+    let container: DIContainer = DIContainer()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(container: container)
         }
     }
 }

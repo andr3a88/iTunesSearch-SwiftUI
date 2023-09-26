@@ -63,6 +63,8 @@
 		FCD772FB2A9E5676002D1B6F /* SearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD772FA2A9E5676002D1B6F /* SearchPlaceholderView.swift */; };
 		FCF7CE372AC1D9DA00C03F78 /* RecentSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7CE362AC1D9DA00C03F78 /* RecentSearchRepository.swift */; };
 		FCF7CE382AC1DCF500C03F78 /* RecentSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7CE362AC1D9DA00C03F78 /* RecentSearchRepository.swift */; };
+		FCF7CE3B2AC2DD9E00C03F78 /* RecentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7CE3A2AC2DD9E00C03F78 /* RecentSearchView.swift */; };
+		FCF7CE3D2AC2DDE500C03F78 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF7CE3C2AC2DDE500C03F78 /* DIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +160,8 @@
 		FCD772F82A9E500C002D1B6F /* SongSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSearchView.swift; sourceTree = "<group>"; };
 		FCD772FA2A9E5676002D1B6F /* SearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceholderView.swift; sourceTree = "<group>"; };
 		FCF7CE362AC1D9DA00C03F78 /* RecentSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchRepository.swift; sourceTree = "<group>"; };
+		FCF7CE3A2AC2DD9E00C03F78 /* RecentSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchView.swift; sourceTree = "<group>"; };
+		FCF7CE3C2AC2DDE500C03F78 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,7 @@
 				FCA7F2AB2A9F4CE900DB9AE0 /* BuyButton.swift */,
 				FCA7F2A52A9F488900DB9AE0 /* BuyButtonStyle.swift */,
 				FCA7F2A72A9F4A6B00DB9AE0 /* ImageLoadingView.swift */,
+				FCF7CE3A2AC2DD9E00C03F78 /* RecentSearchView.swift */,
 				FCD772FA2A9E5676002D1B6F /* SearchPlaceholderView.swift */,
 				FC2004442AAB767000A27AD9 /* Extensions.swift */,
 			);
@@ -327,6 +332,7 @@
 				FC4354AD2AC1813C00FD149D /* iTunesSearch.entitlements */,
 				FCB8EE092A9DF7D00034EFDA /* iTunesSearchApp.swift */,
 				FCB8EE0B2A9DF7D00034EFDA /* ContentView.swift */,
+				FCF7CE3C2AC2DDE500C03F78 /* DIContainer.swift */,
 				FCD772D12A9DF846002D1B6F /* Presentation */,
 				FCD772D42A9DF846002D1B6F /* Model */,
 				FCF7CE392AC1DD1400C03F78 /* Repository */,
@@ -599,6 +605,7 @@
 				FCD772F12A9E352A002D1B6F /* EntityType.swift in Sources */,
 				FCD772EA2A9E344C002D1B6F /* SongListViewModel.swift in Sources */,
 				FCD772E22A9E1FBD002D1B6F /* AlbumSearchView.swift in Sources */,
+				FCF7CE3B2AC2DD9E00C03F78 /* RecentSearchView.swift in Sources */,
 				FCD772D92A9DF846002D1B6F /* Movie.swift in Sources */,
 				FCD772D82A9DF846002D1B6F /* AlbumListViewModel.swift in Sources */,
 				FCA7F2B22A9F526800DB9AE0 /* MovieSectionView.swift in Sources */,
@@ -615,6 +622,7 @@
 				FCD772F52A9E369E002D1B6F /* SongListView.swift in Sources */,
 				FCD772FB2A9E5676002D1B6F /* SearchPlaceholderView.swift in Sources */,
 				FCD772EF2A9E3506002D1B6F /* FetchState.swift in Sources */,
+				FCF7CE3D2AC2DDE500C03F78 /* DIContainer.swift in Sources */,
 				FCA7F2AC2A9F4CE900DB9AE0 /* BuyButton.swift in Sources */,
 				FCD772DF2A9DF9CE002D1B6F /* AlbumListView.swift in Sources */,
 				FCA7F2AA2A9F4A9D00DB9AE0 /* AlbumRowView.swift in Sources */,

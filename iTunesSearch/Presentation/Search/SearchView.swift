@@ -18,10 +18,19 @@ struct SearchView: View {
 
     @State private var searchTerm: String = ""
     @State private var selectedEntityType: EntityType = .all
+    @State private var clearSearch: Bool = false
 
-    @StateObject private var albumViewModel = AlbumListViewModel()
-    @StateObject private var songViewModel = SongListViewModel()
-    @StateObject private var movieViewModel = MovieListViewModel()
+    @StateObject private var recentSearchRepository: RecentSearchRepository
+    @StateObject private var albumViewModel: AlbumListViewModel
+    @StateObject private var songViewModel: SongListViewModel
+    @StateObject private var movieViewModel: MovieListViewModel
+    
+    init(container: DIContainer) {
+        _recentSearchRepository = StateObject(wrappedValue: container.recentSearchRepository)
+        _albumViewModel = StateObject(wrappedValue: AlbumListViewModel(recentSearchRepository: container.recentSearchRepository))
+        _songViewModel = StateObject(wrappedValue: SongListViewModel(recentSearchRepository: container.recentSearchRepository))
+        _movieViewModel = StateObject(wrappedValue: MovieListViewModel(recentSearchRepository: container.recentSearchRepository))
+    }
 
     var body: some View {
         VStack {
@@ -38,6 +47,9 @@ struct SearchView: View {
             Divider()
 
             if searchTerm.isEmpty {
+                RecentSearchView(searchTerm: $searchTerm,
+                                 clearSearch: $clearSearch,
+                                 recentSearch: $recentSearchRepository.recentSearch)
                 SearchPlaceholderView(searchTerm: $searchTerm, suggestions: Self.suggestions)
                     .frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             } else {
@@ -62,12 +74,14 @@ struct SearchView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: selectedEntityType, perform: { newValue in
             updateViewModels(for: searchTerm, type: newValue)
+            WidgetCenter.shared.reloadAllTimelines()
         })
         .onChange(of: searchTerm) { newValue in
             updateViewModels(for: newValue, type: selectedEntityType)
             WidgetCenter.shared.reloadAllTimelines()
         }
-        .task {
+        .onChange(of: clearSearch) { newValue in
+            recentSearchRepository.clear()
             WidgetCenter.shared.reloadAllTimelines()
         }
     }
@@ -95,5 +109,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView()
+    SearchView(container: DIContainer())
 }
